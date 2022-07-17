@@ -1,15 +1,28 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Cars</title>
 </head>
 <body>
 <div style="margin: 50px">
-    <th:block th:each="car : ${carList}">
-        <h1 th:text="${car.toString()}"></h1>
-    </th:block>
+    <table>
+        <thead>
+        <tr>
+            <th>Brand</th>
+            <th>Model</th>
+            <th>Year</th>
+        </tr>
+        </thead>
+        <tbody th:each="car:${carList}">
+        <tr>
+            <td th:text="${car.brand}"></td>
+            <td th:text="${car.model}"></td>
+            <td th:text="${car.year}"></td>
+        </tr>
+        </tbody>
+    </table>
 </div>
+<p><a href="/">Back</a></p>
 </body>
 </html>
